@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>Transfer managment</h1>
+        <div class="create-container">
+            <h2>Add a new Transfer</h2>
+            <form class="create-form">
+                <input type="text" class="from-input" placeholder="From">
+                <input type="text" class="to-input" placeholder="To">
+                <input type="number" class="amount-input" placeholder="Enter the amount">
+                <button type="submit">Add</button>
+            </form>
+            <div class="create-result"></div>
+
+        </div>
+
+        <div class="fetch-container">
+            <h2>Show Details</h2>
+            <form class="fetch-form">
+                <input type="text" class="fetch-from-input" placeholder="From">
+                <input type="text" class="fetch-to-input" placeholder="To">
+
+                <button type="submit">Show</button>
+            </form>
+            <div class="fetch-result"></div>
+        </div>
+
+        <div class="update-container">
+            <h2>Update Data</h2>
+            <form class="update-form">
+                <input type="text" class="update-id-input" placeholder="Enter ID">
+                <input type="number" class="update-amount-input" placeholder="Enter the amount">
+                <input type="text" class="update-from-input" placeholder="From">
+                <input type="text" class="update-to-input" placeholder="To">
+                <button type="submit">Update</button>
+            </form>
+            <div class="update-result"></div>
+        </div>
+
+        <div class="delete-container">
+            <h2>Delete Data</h2>
+            <form class="delete-form">
+                <input type="text" class="delete-id-input" placeholder="Enter ID">
+                <button type="submit">Delete</button>
+            </form>
+            <div class="delete-result"></div>
+
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
