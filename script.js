@@ -42,7 +42,7 @@ function fetchDataByFromOrTo(fromValue, toValue) {
         url += `?from=${encodeURIComponent(fromValue)}`;
     }
     if (toValue) {
-        url +=`fromValue ? &to=${encodeURIComponent(toValue)} : ?to=${encodeURIComponent(toValue)}`;
+        url += `fromValue ? &to=${encodeURIComponent(toValue)} : ?to=${encodeURIComponent(toValue)}`;
     }
 
     fetch(url)
@@ -59,17 +59,23 @@ function fetchDataByFromOrTo(fromValue, toValue) {
                 return;
             }
 
-            const resultText = data.map(item => 
-                `ID: ${item.id}, Amount: ${item.amount}, From: ${item.from}, To: ${item.to}`
-            ).join('\n');
-            document.querySelector('.fetch-result').textContent = resultText;
+            const resultHTML = data.map(item => {
+                return `
+                    <div class="transfer-card">
+                        <h3>Transaction ID: ${item.id}</h3>
+                        <p><span>Amount:</span> <span class="amount">${item.amount}</span></p>
+                        <p><span>From:</span> ${item.from}</p>
+                        <p><span>To:</span> ${item.to}</p>
+                    </div>
+                `;
+            }).join('');
+            document.querySelector('.fetch-result').innerHTML = resultHTML;
         })
         .catch(err => {
             document.querySelector('.fetch-result').textContent = 'Data not found!';
             console.error(err);
         });
 }
-
 updateForm.addEventListener('submit', (e) => {
 
     e.preventDefault();
