@@ -147,3 +147,6 @@ function deleteData(id) {
         document.querySelector('.delete-result').textContent = 'Deletion failed!';
     });
 }
+const fetchResultContainer = document.querySelector(".fetch-result");
+
+
