@@ -3,57 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transaction</title>
+    <title>Transaction Management</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app">
-        <h1>Transfer managment</h1>
+        <h1>Transfer Management</h1>
+
+        
+        <div class="transactions-container">
+            <h2>Transactions</h2>
+            <div class="fetch-result"></div>
+        </div>
+
+        
         <div class="create-container">
-            <h2>Add a new Transfer</h2>
+            <h2>Add a New Transfer</h2>
             <form class="create-form">
-                <input type="text" class="from-input" placeholder="From">
-                <input type="text" class="to-input" placeholder="To">
-                <input type="number" class="amount-input" placeholder="Enter the amount">
+                <input type="text" class="from-input" placeholder="From" required>
+                <input type="text" class="to-input" placeholder="To" required>
+                <input type="number" class="amount-input" placeholder="Enter the amount" required>
                 <button type="submit">Add</button>
             </form>
             <div class="create-result"></div>
-
         </div>
 
+        
         <div class="fetch-container">
             <h2>Show Details</h2>
             <form class="fetch-form">
                 <input type="text" class="fetch-from-input" placeholder="From">
                 <input type="text" class="fetch-to-input" placeholder="To">
-
                 <button type="submit">Show</button>
             </form>
-            <div class="fetch-result"></div>
+            
         </div>
 
+        
         <div class="update-container">
             <h2>Update Data</h2>
             <form class="update-form">
-                <input type="text" class="update-id-input" placeholder="Enter ID">
-                <input type="number" class="update-amount-input" placeholder="Enter the amount">
-                <input type="text" class="update-from-input" placeholder="From">
-                <input type="text" class="update-to-input" placeholder="To">
+                <input type="text" class="update-id-input" placeholder="Enter ID" required>
+                <input type="number" class="update-amount-input" placeholder="Enter the amount" required>
+                <input type="text" class="update-from-input" placeholder="From" required>
+                <input type="text" class="update-to-input" placeholder="To" required>
                 <button type="submit">Update</button>
             </form>
             <div class="update-result"></div>
         </div>
 
+        
         <div class="delete-container">
             <h2>Delete Data</h2>
             <form class="delete-form">
-                <input type="text" class="delete-id-input" placeholder="Enter ID">
+                <input type="text" class="delete-id-input" placeholder="Enter ID" required>
                 <button type="submit">Delete</button>
             </form>
             <div class="delete-result"></div>
-
         </div>
+        <div class="operations-container">
+            
+            <div class="operation-card" id="add-transfer">
+                <i class="fas fa-plus-circle"></i>
+                <h3>Add New Transfer</h3>
+                <p>Quickly add a new transfer to your list.</p>
+            </div>
+        
+        
+            <div class="operation-card" id="show-details">
+                <i class="fas fa-info-circle"></i>
+                <h3>Show Details</h3>
+                <p>View the full details of your transfers.</p>
+            </div>
+        
+            
+            <div class="operation-card" id="update-data">
+                <i class="fas fa-edit"></i>
+                <h3>Update Data</h3>
+                <p>Make changes to an existing transfer.</p>
+            </div>
+        
+        
+            <div class="operation-card" id="delete-data">
+                <i class="fas fa-trash-alt"></i>
+                <h3>Delete Data</h3>
+                <p>Remove unwanted transfers from your list.</p>
+            </div>
+        </div>
+        
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+

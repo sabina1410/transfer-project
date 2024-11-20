@@ -1,47 +1,67 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #f39c12, #f1c40f); /* New vibrant background gradient */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); 
     color: #2c3e50;
     padding: 20px;
+    line-height: 1.6;
 }
-
 
 .app {
     max-width: 950px;
     margin: 40px auto;
     padding: 40px;
-    background-color: #ffffff;
+    background: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
+.app:hover {
+    transform: scale(1.01); 
+}
 
 h1 {
-    font-size: 38px;
-    font-weight: 700;
-    color: #8e44ad; 
+    font-size: 40px;
+    font-weight: bold;
+    color: #5a5afc; 
     margin-bottom: 30px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
-
 h2 {
-    font-size: 26px;
-    color: #16a085; 
+    font-size: 28px;
+    color: #34d399; 
     margin-bottom: 20px;
     font-weight: 600;
 }
 
+.transactions-container {
+    margin-bottom: 40px; 
+}
+
+.transactions-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #8e44ad;
+}
+
+.fetch-result {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.create-container, .fetch-container, .update-container, .delete-container {
+    margin-bottom: 30px;
+}
 
 form {
     display: flex;
@@ -51,40 +71,39 @@ form {
     align-items: center;
 }
 
-
 input {
     padding: 14px;
     font-size: 16px;
-    border: 2px solid #e67e22; 
-    border-radius: 10px;
-    background-color: #f9e79f; 
+    border: 2px solid #6c63ff; 
+    border-radius: 12px;
+    background: #f4f8ff; 
     transition: all 0.3s ease;
     width: 100%;
     max-width: 400px;
 }
 
 input:focus {
-    border-color: #1abc9c; 
+    border-color: #34d399; 
     outline: none;
-    background-color: #ecf0f1;
+    background: #e0fdf4;
 }
-
 
 button {
     padding: 14px;
-    background-color: #e74c3c;
+    background: linear-gradient(90deg, #fc466b, #3f5efb);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
     width: 100%;
     max-width: 400px;
 }
 
 button:hover {
-    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05); 
+    background: linear-gradient(90deg, #e63946, #3a3b9f);
 }
 
 button:disabled {
@@ -92,31 +111,22 @@ button:disabled {
     cursor: not-allowed;
 }
 
-
-.create-result, .fetch-result, .update-result, .delete-result {
+.create-result, .update-result, .delete-result {
     font-size: 18px;
-    color: #27ae60; 
+    color: #1dd1a1; 
     font-weight: 600;
     margin-top: 12px;
 }
 
-.fetch-result {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-
 .transfer-card {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
     padding: 25px;
-    background-color: #ffffff;
-    border: 1px solid #bdc3c7;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     margin: 10px auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -124,30 +134,30 @@ button:disabled {
 
 .transfer-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .transfer-card h3 {
     font-size: 20px;
-    color: #8e44ad; 
-    font-weight: 700;
+    color: #6c63ff;
+    font-weight: bold;
     margin-bottom: 8px;
     text-transform: uppercase;
 }
 
 .transfer-card p {
     font-size: 16px;
-    color: #34495e;
+    color: #2c3e50;
 }
 
 .transfer-card p span {
-    font-weight: 700;
-    color: #f39c12;
+    font-weight: bold;
+    color: #e63946;
 }
 
 .transfer-card .amount {
-    color: #e74c3c;
-    font-weight: 700;
+    color: #ff6b6b;
+    font-weight: bold;
 }
 
 .dont-show {
@@ -160,12 +170,12 @@ button:disabled {
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 34px;
         margin-bottom: 20px;
     }
 
     h2 {
-        font-size: 22px;
+        font-size: 24px;
         margin-bottom: 15px;
     }
 
@@ -177,6 +187,58 @@ button:disabled {
         padding: 20px;
     }
 }
+.operations-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.operation-card {
+    background: linear-gradient(135deg, #6c63ff, #34d399); 
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.operation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #34d399, #6c63ff); 
+}
+
+.operation-card i {
+    font-size: 48px;
+    color: #ffffffcc; 
+    transition: transform 0.3s ease;
+}
+
+.operation-card:hover i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.operation-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.operation-card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffffcc;
+}
+
+
 
 
 
